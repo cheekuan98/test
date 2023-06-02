@@ -7,6 +7,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  # Setting an environment variable with the value of a configuration variable
+  PJ_NAME: ${{ secrets.PJ_NAME }}
+  PROJECT_NAME: ${{ vars.PROJECT_NAME }}
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -20,7 +25,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Print Environment Secret Variable
-        run: echo "${{ secrets.PJ_NAME }}"
+        run: echo "$PJ_NAME"
         
       - name: Print Environment NON Secret Variable
-        run: echo "${{ vars.PROJECT_NAME }}"
+        run: echo "$PROJECT_NAME"

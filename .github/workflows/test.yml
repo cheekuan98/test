@@ -22,9 +22,9 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Print Environment Secret Variable
-        run: echo ${{ secrets.PJ_NAME }}
-             echo ${{ secrets.PJ_NAME_1 }}
+        run: echo "${{ secrets.PJ_NAME }}"
+             echo "${{ secrets.PJ_NAME_1 }}"
         
       - name: Print Environment NON Secret Variable
-        run: echo ${{ vars.PROJECT_NAME }}
-             echo ${{ vars.PROJECT_NAME_1 }}
+        run: echo "${{ vars.PROJECT_NAME }}"
+             echo "${{ vars.PROJECT_NAME_1 }}"
